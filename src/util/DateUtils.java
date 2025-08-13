@@ -4,10 +4,20 @@
  */
 package util;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author pame
  */
 public class DateUtils {
-    
+    private static final String PATTERN = "yyyy-MM-dd";
+    public static DateFormatter getFormatter() {
+        return new DateFormatter(new SimpleDateFormat(PATTERN));
+    }
+    public static LocalDate parse(String s) {
+        if (s == null || s.trim().isEmpty()) return null;
+        try { return LocalDate.parse(s.trim()); }
+        catch (DateTimeParseException e) { return null; }
+    }
 }
