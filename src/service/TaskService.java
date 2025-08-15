@@ -4,13 +4,20 @@
  */
 package service;
 
+import dao.DAOFactory;
 import dao.TaskDAO;
 import dominio.Task;
 import exceptions.AppException;
+import java.time.LocalDate;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  *
